@@ -43,15 +43,14 @@ const TokenSelector = ({
       value: t.address,
       logo: t.logoURI,
     }));
-    if(Array.isArray(options) &&  options.length){
-      setSelected(options[0])
-
+    if (Array.isArray(options) && options.length) {
+      setSelected(options[0]);
     }
 
     setTokenOptions(options);
   }, [chain, filter]);
   const handleMenuClick = async (e: any) => {
-       setSelected(e)
+    setSelected(e);
   };
   return (
     <div className="flex h-full">
@@ -81,6 +80,7 @@ const TokenSelector = ({
                   src={selected?.logo ?? selected?.logo}
                   height={30}
                   width={30}
+                  className="rounded-full"
                 />
                 <span className="text-neutral-900 dark:text-white ml-1 font-medium">
                   {selected?.label ?? selected?.label}
@@ -91,10 +91,15 @@ const TokenSelector = ({
             renderItem={(item: any) => (
               <div
                 className={
-                  "flex items-center rounded-md w-full px-3  hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 truncate cursor-pointer"
+                  "flex items-center rounded-md w-full px-3 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 truncate cursor-pointer"
                 }>
-                <img src={item?.logo} height="50" width={50} />
-                <span className="text-neutral-900 dark:text-white font-medium">
+                <img
+                  src={item?.logo}
+                  height={30}
+                  width={30}
+                  className="rounded-full"
+                />
+                <span className="text-neutral-900 dark:text-white ml-1 font-medium">
                   {item?.label}
                 </span>
               </div>
