@@ -1,6 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
 import React, { FC, Fragment } from "react";
-// import { Link } from "react-router-dom";
 
 export interface NcDropDownItem {
   id: string;
@@ -65,11 +64,12 @@ const NcDropDown: FC<NcDropDownProps> = ({
         leaveTo="transform opacity-0 scale-95">
         <Menu.Items
           className={`absolute ${panelMenusClass} w-56 mt-2 bg-white dark:bg-neutral-900 rounded-lg divide-y divide-neutral-100 shadow-lg ring-1 ring-black dark:ring-white ring-opacity-5 dark:ring-opacity-10 focus:outline-none z-30`}>
-          <div className="px-1 py-3 text-sm text-neutral-6000 dark:text-neutral-300">
+          <div className="px-1  text-sm text-neutral-6000 dark:text-neutral-300">
             {data?.map((item) => (
               <Menu.Item
                 key={item.id}
                 as="button"
+                className="w-full"
                 onClick={() => onClick(item)}
                 data-menu-item-id={item.id}>
                 {renderItem(item)}

@@ -62,7 +62,6 @@ const useTokenStore = create<State>()(
       chainIdMap: {},
       addressMap: {},
       getData: async () => {
-        console.log("fetch tokens");
         const response = await fetch(_1INCH_LIST);
         const data = await response.json();
         const chanIdTemp: any = {};

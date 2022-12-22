@@ -17,7 +17,7 @@ export const Venues: Record<z.infer<typeof ActionsLiterals>, string> = {
   UniV3SwapSetAmountIn: "",
   UniV3SwapSetAmountOut: "",
   AaveV2Borrow: "",
-  AaveV2Lend: ""
+  AaveV2Lend: "",
 };
 
 export const ActionPatternMembers = {
@@ -65,7 +65,7 @@ const AaveV2Lend = z.object({
 });
 export type AaveV2Lend = z.infer<typeof AaveV2Lend>;
 
-const LidoStakeParamToken = z.enum([
+export const LidoStakeParamToken = z.enum([
   "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
 ]);
 
@@ -76,7 +76,7 @@ const LidoStake = z.object({
 });
 export type LidoStake = z.infer<typeof LidoStake>;
 
-const ConvexStakeParamToken = z.enum([
+export const ConvexStakeParamToken = z.enum([
   "0xd533a949740bb3306d119cc777fa900ba034cd52",
   "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
   "0x06325440d014e39736583c165c2963ba99faf14e",
